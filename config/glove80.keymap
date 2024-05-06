@@ -113,12 +113,12 @@
 
         symbol_layer {
             bindings = <
-&none &none     &none             &none                &none                                                        &none &none &none &none &none
-&none &kp GRAVE &kp LPAR          &kp RPAR             &none      &none                                     &none &none &none &none &none &none
-&none &kp LBRC  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES    &kp RBRC   &none                                     &none &none &none &none &none &none
-&none &kp CARET &kp EQUAL         &kp UNDERSCORE       &kp DOLLAR &none                                     &none &none &none &none &none &none
-&none &kp LT    &kp PIPE          &kp MINUS            &kp GT     &none &none &none &none &none &none &none &none &none &none &none &none &none
-&none &none     &kp LBKT          &kp RBKT             &kp PLUS   &none &none &none &none &none &none       &none &none &none &none &none
+&none &none     &none             &none                &none                                                    &none &none &none &none &none
+&none &kp GRAVE &kp LPAR          &kp RPAR             &none      &none                                   &none &none &none &none &none &none
+&none &kp LBRC  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES    &kp RBRC   &kp QUESTION                            &none &none &none &none &none &none
+&none &kp CARET &kp EQUAL         &kp UNDERSCORE       &kp DOLLAR &kp ASTRK                               &none &none &none &none &none &none
+&none &kp LT    &kp PIPE          &kp MINUS            &kp GT     &kp SLASH &none &none &none &none &none &none &none &none &none &none &none &none
+&none &none     &kp LBKT          &kp RBKT             &kp PLUS   &none     &none &none &none &none &none       &none &none &none &none &none
             >;
         };
     };

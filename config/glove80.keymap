@@ -201,5 +201,3 @@
         };
     };
 };
-
-bindings = <&none &none &none &none &none &none &none &none &none &none &none &none &(0x08 << 24 | ((((0x07) << 16) | (0x1D)))) &(((((0x07) << 16) | (0x52)))) &none &(0x08 << 24 | ((((0x07) << 16) | (0x1B)))) &none &none &none &none &none &none &(0x08 << 24 | (0x01 << 24 | ((((0x07) << 16) | (0x14))))) &none &(((((0x07) << 16) | (0x50)))) &(((((0x07) << 16) | (0x51)))) &(((((0x07) << 16) | (0x4F)))) &(0x08 << 24 | ((((0x07) << 16) | (0x06)))) &none &none &none &none &none &none &none &none &none &none &none &(0x08 << 24 | ((((0x07) << 16) | (0x19)))) &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none>;

@@ -18,13 +18,15 @@
 #define KEYS_L LC1 LC2 LC3 LC4 LC5 LN0 LN1 LN2 LN3 LN4 LN5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5 LF1 LF2 LF3 LF4 LF5 LT0 LT1 LT2 LT3 LT4 LT5 
 #define KEYS_R RC1 RC2 RC3 RC4 RC5 RN0 RN1 RN2 RN3 RN4 RN5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5 RF1 RF2 RF3 RF4 RF5 RT0 RT1 RT2 RT3 RT4 RT5
 
+#include "helper.dtsi"
+#include "combos.dtsi"
 #include "hrm.dtsi"
 
-// layers
-#define DEFAULT 0
-#define LOWER 1
-#define MAGIC 2
-#define SYMBOL 3
+#define LAYER_DEFAULT 0
+#define LAYER_LOWER 1
+#define LAYER_MAGIC 2
+#define LAYER_SYMBOL 3
+#define LAYER_CURSOR 4
 
 / {
     behaviors {
@@ -34,7 +36,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&mo LOWER>, <&to LOWER>;
+            bindings = <&mo LAYER_LOWER>, <&to LAYER_LOWER>;
         };
     };
 
@@ -76,50 +78,126 @@
         compatible = "zmk,keymap";
 
         default_layer {
+			bindings = <GLV80_LAYOUT(
+// left hand
+&kp F1          &kp F2     &kp F3      &kp F4       &kp F5,
+&kp EQUAL       &kp N1     &kp N2      &kp N3       &kp N4        &kp N5,
+&kp TAB         &kp Q      &kp W       &kp E        &kp R         &kp T,
+&kp ESC         &hm LGUI A &hml LALT S &hml LCTRL D &hmls LSHFT F &kp G,
+&kp GRAVE       &kp Z      &kp X       &kp C        &kp V         &kp B,
+&mo LAYER_MAGIC &kp HOME   &kp END     &kp LEFT     &kp RIGHT,
 
-            bindings = <
-&kp F1    &kp F2 &kp F3  &kp F4  &kp F5                                                                                            &kp F6  &kp F7 &kp F8 &kp F9   &kp F10
-&kp EQUAL &kp N1 &kp N2  &kp N3  &kp N4  &kp N5                                                                            &kp N6  &kp N7  &kp N8 &kp N9 &kp N0   &kp MINUS
-&kp TAB   &kp Q  &kp W   &kp E   &kp R   &kp T                                                                             &kp Y   &kp U   &kp I  &kp O  &kp P    &kp BSLH
+// left hand thumb
+&kp LSHFT              &kp LALT  &kp LGUI,
+&lt LAYER_CURSOR SPACE &kp LCTRL &layer_td,
 
-&kp ESC &hm LGUI A &hml LALT S &hml LCTRL D &hmls LSHFT F &kp G                                          &kp H   &hmrs RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI SEMI &kp SQT
+// right hand
+       &kp F6        &kp F7       &kp F8      &kp F9         &kp F10,
+&kp N6 &kp N7        &kp N8       &kp N9      &kp N0         &kp MINUS,
+&kp Y  &kp U         &kp I        &kp O       &kp P          &kp BSLH,
+&kp H  &hmrs RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI SEMI &kp SQT,
+&kp N  &kp M         &kp COMMA    &kp DOT     &kp FSLH       &kp PG_UP,
+       &kp UP        &kp DOWN     &kp LBKT    &kp RBKT       &kp PG_DN,
 
-&kp GRAVE &kp Z    &kp X   &kp C    &kp V     &kp B     &kp LSHFT   &kp LALT   &layer_td  &kp RALT  &kp DEL &kp RSHFT      &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
-&mo MAGIC &kp HOME &kp END &kp LEFT &kp RIGHT           &kp BSPC    &kp LCTRL  &kp LGUI   &kp LGUI  &kp RET &lt SYMBOL SPACE              &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
-            >;
+// right hand thumb
+&kp RALT &kp DEL &kp RSHFT,
+&kp LGUI &kp RET &lt LAYER_SYMBOL BSPC,
+			)>;
         };
 
         lower_layer {
-            bindings = <
-            &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
-            &trans            &none               &none           &none           &none           &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN
-            &trans            &none               &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp SLCK
-            &trans            &none               &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_UP                                                                             &kp PRCNT    &kp KP_N4    &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none
-            &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &trans      &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
-            &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
-            >;
+			bindings = <GLV80_LAYOUT(
+// left hand
+&kp C_BRI_DN &kp C_BRI_UP &kp C_PREV &kp C_NEXT &kp C_PP,
+&trans       &none        &none      &none      &none     &kp HOME,
+&trans       &none        &none      &kp UP     &none     &kp END,
+&trans       &none        &kp LEFT   &kp DOWN   &kp RIGHT &kp PG_UP,
+&trans       &kp K_CMENU  &none      &kp F11    &kp F12   &kp PG_DN,
+&trans       &kp CAPS     &kp INS    &kp F11    &kp F12,
+
+// left hand thumb
+&trans &trans &to LAYER_DEFAULT,
+&trans &trans &trans,
+
+// right hand
+           &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK,
+&kp LPAR   &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN,
+&kp RPAR   &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp SLCK,
+&kp PRCNT  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none,
+&kp COMMA  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans,
+           &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans,
+
+// right hand thumb
+&trans &trans &trans,
+&trans &trans &trans,
+			)>;
         };
 
         magic_layer {
             bindings = <
-            &bt BT_CLR        &none               &none           &none           &none                                                                                                           &none      &none      &none      &none      &none
-            &none             &none               &none           &none           &none           &none                                                                                &none      &none      &none      &none      &none      &none
-            &none             &rgb_ug RGB_SPI     &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_TOG                                                                      &none      &none      &none      &none      &none      &none
-            &bootloader       &rgb_ug RGB_SPD     &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF                                                                      &none      &none      &none      &none      &none      &bootloader
-            &sys_reset        &none               &none           &none           &none           &none           &bt_2     &bt_3     &none            &none     &none     &none       &none      &none      &none      &none      &none      &sys_reset
-            &none             &none               &none           &none           &none                           &bt_0     &bt_1     &out OUT_USB     &none     &none     &none                  &none      &none      &none      &none      &none
+&bt BT_CLR &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none &none &none
+&none &rgb_ug RGB_SPI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_TOG &none &none &none &none &none &none
+&bootloader &rgb_ug RGB_SPD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF &none &none &none &none &none &bootloader
+&sys_reset &none &none &none &none &none &bt_2 &bt_3 &none &none &none &none &none &none &none &none &none &sys_reset
+&none &none &none &none &none &bt_0 &bt_1 &out OUT_USB &none &none &none &none &none &none &none &none
             >;
         };
 
         symbol_layer {
-            bindings = <
-&none &none     &none             &none                &none                                                    &none &none &none &none &none
-&none &kp GRAVE &kp LPAR          &kp RPAR             &none      &none                                   &none &none &none &none &none &none
-&none &kp LBRC  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES    &kp RBRC   &kp QUESTION                            &none &none &none &none &none &none
-&none &kp CARET &kp EQUAL         &kp UNDERSCORE       &kp DOLLAR &kp ASTRK                               &none &none &none &none &none &none
-&none &kp LT    &kp PIPE          &kp MINUS            &kp GT     &kp SLASH &none &none &none &none &none &none &none &none &none &none &none &none
-&none &none     &kp LBKT          &kp RBKT             &kp PLUS   &none     &none &none &none &none &none       &none &none &none &none &none
-            >;
+			bindings = <GLV80_LAYOUT(
+// left hand
+&none &none      &none             &none              &none,
+&none &kp GRAVE  &kp LPAR          &kp RPAR           &none       &none,
+&none &kp LBRC   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp RBRC    &kp QUESTION,
+&none &kp CARET  &kp EQUAL         &kp UNDERSCORE     &kp DOLLAR  &kp ASTRK,
+&none &kp LT     &kp PIPE          &kp MINUS          &kp GT      &kp SLASH,
+&none &none      &kp LBKT          &kp RBKT           &kp PLUS,
+
+// left hand thumb
+&none &none &none,
+&none &none &none,
+
+// right hand
+	  &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+	  &none &none &none &none &none,
+
+// right hand thumb
+&none &none &none,
+&none &none &none,
+			)>;
+        };
+
+        cursor_layer {
+			bindings = <GLV80_LAYOUT(
+// left hand
+&none  &none &none  &none &none,
+&none  &none &_UNDO &UP   &none  &_CUT,
+&_LOCK &none &LEFT  &DOWN &RIGHT &_COPY,
+&none  &none &none  &none &none  &_PASTE,
+&none  &none &none  &none &none  &none,
+&none  &none &none  &none &none,
+
+// left hand thumb
+&none &none &none,
+&none &none &none,
+
+// right hand
+	  &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+	  &none &none &none &none &none,
+
+// right hand thumb
+&none &none &none,
+&none &none &none,
+			)>;
         };
     };
 };

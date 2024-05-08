@@ -1,0 +1,17 @@
+#define _C         LG
+#define _A_TAB     LGUI
+#define _G_TAB     LALT
+#define _REDO      _C(LS(Z))
+#define _POWER     K_POWER
+#define _W         LA
+#define _HOME      _C(LEFT)
+#define _END       _C(RIGHT)
+#define _SLEEP     C_SLEEP
+#define _LOCK      _C(LC(Q))
+#define _UNDO      _C(Z)
+#define _CUT       _C(X)
+#define _COPY      _C(C)
+#define _PASTE     _C(V)
+#define _FIND      _C(F)
+#define _FIND_NEXT _C(G)
+#define _FIND_PREV _C(LS(G))

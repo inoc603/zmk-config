@@ -1,0 +1,44 @@
+#define GLV80_LAYOUT( \
+	lup3, lup2, lup1, lhome, ldown1, ldown2, lthumb1, lthumb2, \
+	rup3, rup2, rup1, rhome, rdown1, rdown2, rthumb1, rthumb2, \
+	padding \
+) \
+		lup3 rup3 \
+		lup2 rup2 \
+		lup1 rup1 \
+		lhome rhome \
+		ldown1 lthumb1 rthumb1 rdown1 \
+		ldown2 lthumb2 rthumb2 rdown2
+
+/*
+
+Copy this for a new layer
+
+        none_layer {
+			bindings = <GLV80_LAYOUT(
+// left hand
+&none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none,
+
+// left hand thumb
+&none &none &none,
+&none &none &none,
+
+// right hand
+	  &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+&none &none &none &none &none &none,
+	  &none &none &none &none &none,
+
+// right hand thumb
+&none &none &none,
+&none &none &none,
+			)>;
+        };
+*/

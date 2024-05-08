@@ -156,7 +156,7 @@
 	      &none    &none    &none     &none    &none,
 &none     &none    &none    &none     &none    &none,
 &none     &none    &none    &none     &none    &none,
-&kp RIGHT &kp BSPC &kp TAB  &kp SPACE &kp RET  &none,
+&kp LEFT  &kp BSPC &kp TAB  &kp SPACE &kp RET  &none,
 &none     &kp DEL  &none    &none     &none    &none,
 	      &none    &none    &none     &none    &none,
 

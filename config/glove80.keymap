@@ -32,6 +32,13 @@
             tapping-term-ms = <200>;
             bindings = <&mo LAYER_LOWER>, <&to LAYER_LOWER>;
         };
+
+        shift_td: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LSHFT>, <&kp CAPS>;
+        };
     };
 
     macros {
@@ -82,7 +89,7 @@
 &mo LAYER_MAGIC &kp HOME   &kp END     &kp LEFT     &kp RIGHT,
 
 // left hand thumb
-&td LSHFT              &kp LALT  &kp LGUI,
+&shift_td              &kp LALT  &kp LGUI,
 &lt LAYER_CURSOR BSPC  &kp LCTRL &layer_td,
 
 // right hand
@@ -94,7 +101,7 @@
        &kp UP        &kp DOWN     &kp LBKT    &kp RBKT       &kp PG_DN,
 
 // right hand thumb
-&kp RALT &kp DEL &td RSHFT,
+&kp RALT &kp DEL &shift_td,
 &kp LGUI &kp RET &lt LAYER_SYMBOL SPACE,
 			)>;
         };

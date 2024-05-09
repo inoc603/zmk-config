@@ -141,21 +141,21 @@
         symbol_layer {
 			bindings = <GLV80_LAYOUT(
 // left hand
-&none &none      &none             &none              &none,
-&none &kp GRAVE  &kp LPAR          &kp RPAR           &none       &none,
-&none &kp LBRC   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp RBRC    &kp QUESTION,
-&none &kp CARET  &kp EQUAL         &kp UNDERSCORE     &kp DOLLAR  &kp ASTRK,
-&none &kp LT     &kp PIPE          &kp MINUS          &kp GT      &kp SLASH,
-&none &none      &kp LBKT          &kp RBKT           &kp PLUS,
+&none    &none      &none             &none              &none,
+&none    &kp GRAVE  &kp LPAR          &kp RPAR           &none       &none,
+&none    &kp LBRC   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp RBRC    &kp QUESTION,
+&kp BSLH &kp CARET  &kp EQUAL         &kp UNDERSCORE     &kp DOLLAR  &kp ASTRK,
+&none    &kp LT     &kp PIPE          &kp MINUS          &kp GT      &kp SLASH,
+&none    &none      &kp LBKT          &kp RBKT           &kp PLUS,
 
 // left hand thumb
-&none &none &none,
-&none &none &none,
+&none       &none     &none,
+&kp PERCENT &kp COLON &kp SEMI,
 
 // right hand
 	      &none    &none    &none     &none    &none,
 &none     &none    &none    &none     &none    &none,
-&none     &none    &none    &none     &none    &none,
+&none     &kp LBKT &kp LPAR &kp RPAR  &kp RBKT &none,
 &kp LEFT  &kp BSPC &kp TAB  &kp SPACE &kp RET  &none,
 &none     &kp DEL  &none    &none     &none    &none,
 	      &none    &none    &none     &none    &none,
@@ -169,24 +169,24 @@
         cursor_layer {
 			bindings = <GLV80_LAYOUT(
 // left hand
-&none     &none &none     &none    &none,
-&none     &none &none     &none    &none     &none,
-&none     &none &kp _UNDO &kp UP   &none     &kp _CUT,
-&kp _LOCK &none &kp LEFT  &kp DOWN &kp RIGHT &kp _COPY,
-&none     &none &none     &none    &none     &kp _PASTE,
-&none     &none &none     &none    &none,
+&none         &none       &none     &none    &none,
+&none         &none       &none     &none    &none     &none,
+&kp LG(TAB)   &kp LG(Q)   &kp LG(W) &kp UP   &none     &kp _CUT,
+&kp _LOCK     &kp LG(A)   &kp LEFT  &kp DOWN &kp RIGHT &kp _COPY,
+&none         &kp _UNDO   &none     &none    &none     &kp _PASTE,
+&none         &none       &none     &none    &none,
 
 // left hand thumb
 &none &none &none,
 &none &none &none,
 
 // right hand
-	  &none &none &none &none &none,
-&none &none &none &none &none &none,
-&none &none &none &none &none &none,
-&none &none &none &none &none &none,
-&none &none &none &none &none &none,
-	  &none &none &none &none &none,
+	  &none     &none  &none &none    &none,
+&none &none     &none  &none &none    &none,
+&none &none     &none  &none &none    &none,
+&none &kp _HOME &none  &none &kp _END &none,
+&none &none     &none  &none &none    &none,
+	  &none     &none  &none &none    &none,
 
 // right hand thumb
 &none &none &none,

@@ -82,7 +82,7 @@
 &mo LAYER_MAGIC &kp HOME   &kp END     &kp LEFT     &kp RIGHT,
 
 // left hand thumb
-&kp LSHFT              &kp LALT  &kp LGUI,
+&td LSHFT              &kp LALT  &kp LGUI,
 &lt LAYER_CURSOR BSPC  &kp LCTRL &layer_td,
 
 // right hand
@@ -94,7 +94,7 @@
        &kp UP        &kp DOWN     &kp LBKT    &kp RBKT       &kp PG_DN,
 
 // right hand thumb
-&kp RALT &kp DEL &kp RSHFT,
+&kp RALT &kp DEL &td RSHFT,
 &kp LGUI &kp RET &lt LAYER_SYMBOL SPACE,
 			)>;
         };
@@ -169,12 +169,12 @@
         cursor_layer {
 			bindings = <GLV80_LAYOUT(
 // left hand
-&none         &none       &none     &none    &none,
-&none         &none       &none     &none    &none     &none,
-&kp LG(TAB)   &kp LG(Q)   &kp LG(W) &kp UP   &none     &kp _CUT,
-&kp _LOCK     &kp LG(A)   &kp LEFT  &kp DOWN &kp RIGHT &kp _COPY,
-&none         &kp _UNDO   &none     &none    &none     &kp _PASTE,
-&none         &none       &none     &none    &none,
+&none         &none       &none     &none     &none,
+&none         &none       &none     &none     &none     &none,
+&kp LG(TAB)   &kp LG(Q)   &kp LG(W) &kp UP    &none     &kp _CUT,
+&kp _LOCK     &kp LG(A)   &kp LEFT  &kp DOWN  &kp RIGHT &kp _COPY,
+&none         &kp _UNDO   &none     &kp LC(C) &none     &kp _PASTE,
+&none         &none       &none     &none     &none,
 
 // left hand thumb
 &none &none &none,

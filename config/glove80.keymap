@@ -140,7 +140,7 @@
         };
 
         symbol_layer {
-			bindings = <GLV80_LAYOUT(
+            bindings = <GLV80_LAYOUT(
 // ----------------------------------------------------------------------------- ,
    &none    &none     &none            &none             &none                   ,
    &none    &kp GRAVE &kp LPAR         &kp RPAR          &none      &none        ,

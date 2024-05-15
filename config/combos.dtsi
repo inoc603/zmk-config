@@ -15,4 +15,4 @@
 #define _FIND          _C(F)
 #define _FIND_NEXT     _C(G)
 #define _FIND_PREV     _C(LS(G))
-#define _DEL_WORD_PREV LALT(BSPC)
+#define _DEL_WORD_PREV LA(BSPC)

@@ -79,59 +79,53 @@
         compatible = "zmk,keymap";
 
         default_layer {
-			bindings = <GLV80_LAYOUT(
-// left hand
-&kp F1          &kp F2     &kp F3      &kp F4       &kp F5,
-&kp EQUAL       &kp N1     &kp N2      &kp N3       &kp N4        &kp N5,
-&kp TAB         &kp Q      &kp W       &kp E        &kp R         &kp T,
-&kp ESC         &hm LGUI A &hml LALT S &hml LCTRL D &hmls LSHFT F &kp G,
-&kp GRAVE       &kp Z      &kp X       &kp C        &kp V         &kp B,
-&mo LAYER_MAGIC &kp HOME   &kp END     &kp LEFT     &kp RIGHT,
-
-// left hand thumb
-&shift_td              &kp LALT  &kp LGUI,
-&lt LAYER_CURSOR BSPC  &kp LCTRL &layer_td,
-
-// right hand
-       &kp F6        &kp F7       &kp F8      &kp F9         &kp F10,
-&kp N6 &kp N7        &kp N8       &kp N9      &kp N0         &kp MINUS,
-&kp Y  &kp U         &kp I        &kp O       &kp P          &kp BSLH,
-&kp H  &hmrs RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI SEMI &kp SQT,
-&kp N  &kp M         &kp COMMA    &kp DOT     &kp FSLH       &kp PG_UP,
-       &kp UP        &kp DOWN     &kp LBKT    &kp RBKT       &kp PG_DN,
-
-// right hand thumb
-&kp RALT &kp DEL &shift_td,
-&kp LGUI &kp RET &lt LAYER_SYMBOL SPACE,
-			)>;
+            bindings = <GLV80_LAYOUT(
+// ------------------------------------------------------------------------ ,
+   &kp F1          &kp F2     &kp F3      &kp F4       &kp F5               ,
+   &kp EQUAL       &kp N1     &kp N2      &kp N3       &kp N4        &kp N5 ,
+   &kp TAB         &kp Q      &kp W       &kp E        &kp R         &kp T  ,
+   &kp ESC         &hm LGUI A &hml LALT S &hml LCTRL D &hmls LSHFT F &kp G  ,
+   &kp GRAVE       &kp Z      &kp X       &kp C        &kp V         &kp B  ,
+   &mo LAYER_MAGIC &kp HOME   &kp END     &kp LEFT     &kp RIGHT            ,
+// ------------------------------------------------------------------------ ,
+   &shift_td             &kp LALT  &kp LGUI                                 ,
+   &lt LAYER_CURSOR BSPC &kp LCTRL &layer_td                                ,
+// ------------------------------------------------------------------------ ,
+          &kp F6        &kp F7       &kp F8      &kp F9         &kp F10     ,
+   &kp N6 &kp N7        &kp N8       &kp N9      &kp N0         &kp MINUS   ,
+   &kp Y  &kp U         &kp I        &kp O       &kp P          &kp BSLH    ,
+   &kp H  &hmrs RSHFT J &hmr RCTRL K &hmr RALT L &hmr RGUI SEMI &kp SQT     ,
+   &kp N  &kp M         &kp COMMA    &kp DOT     &kp FSLH       &kp PG_UP   ,
+          &kp UP        &kp DOWN     &kp LBKT    &kp RBKT       &kp PG_DN   ,
+// ------------------------------------------------------------------------ ,
+   &kp RALT &kp DEL &shift_td                                               ,
+   &kp LGUI &kp RET &lt LAYER_SYMBOL SPACE                                  ,
+)>;
         };
 
         lower_layer {
-			bindings = <GLV80_LAYOUT(
-// left hand
-&kp C_BRI_DN &kp C_BRI_UP &kp C_PREV &kp C_NEXT &kp C_PP,
-&trans       &none        &none      &none      &none     &kp HOME,
-&trans       &none        &none      &kp UP     &none     &kp END,
-&trans       &none        &kp LEFT   &kp DOWN   &kp RIGHT &kp PG_UP,
-&trans       &kp K_CMENU  &none      &kp F11    &kp F12   &kp PG_DN,
-&trans       &kp CAPS     &kp INS    &kp F11    &kp F12,
-
-// left hand thumb
-&trans &trans &to LAYER_DEFAULT,
-&trans &trans &trans,
-
-// right hand
-           &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK,
-&kp LPAR   &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN,
-&kp RPAR   &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp SLCK,
-&kp PRCNT  &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none,
-&kp COMMA  &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans,
-           &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans,
-
-// right hand thumb
-&trans &trans &trans,
-&trans &trans &trans,
-			)>;
+            bindings = <GLV80_LAYOUT(
+// ------------------------------------------------------------------------------- ,
+   &kp C_BRI_DN &kp C_BRI_UP &kp C_PREV &kp C_NEXT &kp C_PP                        ,
+   &trans       &none        &none      &none      &none     &kp HOME              ,
+   &trans       &none        &none      &kp UP     &none     &kp END               ,
+   &trans       &none        &kp LEFT   &kp DOWN   &kp RIGHT &kp PG_UP             ,
+   &trans       &kp K_CMENU  &none      &kp F11    &kp F12   &kp PG_DN             ,
+   &trans       &kp CAPS     &kp INS    &kp F11    &kp F12                         ,
+// ------------------------------------------------------------------------------- ,
+   &trans &trans &to LAYER_DEFAULT                                                 ,
+   &trans &trans &trans                                                            ,
+// ------------------------------------------------------------------------------- ,
+             &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK ,
+   &kp LPAR  &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN       ,
+   &kp RPAR  &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp SLCK        ,
+   &kp PRCNT &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none           ,
+   &kp COMMA &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans          ,
+             &kp KP_N0  &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans          ,
+// ------------------------------------------------------------------------------- ,
+   &trans &trans &trans                                                            ,
+   &trans &trans &trans                                                            ,
+)>;
         };
 
         magic_layer {
@@ -147,58 +141,52 @@
 
         symbol_layer {
 			bindings = <GLV80_LAYOUT(
-// left hand
-&none    &none      &none             &none              &none,
-&none    &kp GRAVE  &kp LPAR          &kp RPAR           &none       &none,
-&none    &kp LBRC   &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES  &kp RBRC    &kp QUESTION,
-&kp BSLH &kp CARET  &kp EQUAL         &kp UNDERSCORE     &kp DOLLAR  &kp ASTRK,
-&none    &kp LT     &kp PIPE          &kp MINUS          &kp GT      &kp SLASH,
-&none    &none      &kp LBKT          &kp RBKT           &kp PLUS,
-
-// left hand thumb
-&none       &none     &none,
-&kp PERCENT &kp COLON &kp SEMI,
-
-// right hand
-	      &none    &none    &none     &none    &none,
-&none     &none    &none    &none     &none    &none,
-&none     &kp LBKT &kp LPAR &kp RPAR  &kp RBKT &none,
-&kp LEFT  &kp BSPC &kp TAB  &kp SPACE &kp RET  &none,
-&none     &kp DEL  &none    &none     &none    &none,
-	      &none    &none    &none     &none    &none,
-
-// right hand thumb
-&none &none &none,
-&none &none &none,
-			)>;
+// ----------------------------------------------------------------------------- ,
+   &none    &none     &none            &none             &none                   ,
+   &none    &kp GRAVE &kp LPAR         &kp RPAR          &none      &none        ,
+   &none    &kp LBRC  &kp SINGLE_QUOTE &kp DOUBLE_QUOTES &kp RBRC   &kp QUESTION ,
+   &kp BSLH &kp CARET &kp EQUAL        &kp UNDERSCORE    &kp DOLLAR &kp ASTRK    ,
+   &none    &kp LT    &kp PIPE         &kp MINUS         &kp GT     &kp SLASH    ,
+   &none    &none     &kp LBKT         &kp RBKT          &kp PLUS                ,
+// ----------------------------------------------------------------------------- ,
+   &none       &none     &none                                                   ,
+   &kp PERCENT &kp COLON &kp SEMI                                                ,
+// ----------------------------------------------------------------------------- ,
+            &none              &none    &none     &none    &none                 ,
+   &none    &none              &none    &none     &none    &none                 ,
+   &none    &kp LBKT           &kp LPAR &kp RPAR  &kp RBKT &none                 ,
+   &kp LEFT &kp BSPC           &kp TAB  &kp SPACE &kp RET  &none                 ,
+   &none    &kp _DEL_WORD_PREV &none    &none     &none    &none                 ,
+            &none              &none    &none     &none    &none                 ,
+// ----------------------------------------------------------------------------- ,
+   &none &none &none                                                             ,
+   &none &none &none                                                             ,
+)>;
         };
 
         cursor_layer {
 			bindings = <GLV80_LAYOUT(
-// left hand
-&none         &none       &none     &none     &none,
-&none         &none       &none     &none     &none     &none,
-&kp LG(TAB)   &kp LG(Q)   &kp LG(W) &kp UP    &none     &kp _CUT,
-&kp _LOCK     &kp LG(A)   &kp LEFT  &kp DOWN  &kp RIGHT &kp _COPY,
-&none         &kp _UNDO   &none     &kp LC(C) &none     &kp _PASTE,
-&none         &none       &none     &none     &none,
-
-// left hand thumb
-&none &none &none,
-&none &none &none,
-
-// right hand
-	  &none     &none  &none &none    &none,
-&none &none     &none  &none &none    &none,
-&none &none     &none  &none &none    &none,
-&none &kp _HOME &none  &none &kp _END &none,
-&none &none     &none  &none &none    &none,
-	  &none     &none  &none &none    &none,
-
-// right hand thumb
-&none &none &none,
-&none &none &none,
-			)>;
+// -------------------------------------------------------------- ,
+   &none       &none     &none     &none     &none                ,
+   &none       &none     &none     &none     &none     &none      ,
+   &kp LG(TAB) &kp LG(Q) &kp LG(W) &kp UP    &none     &kp _CUT   ,
+   &kp _LOCK   &kp LG(A) &kp LEFT  &kp DOWN  &kp RIGHT &kp _COPY  ,
+   &none       &kp _UNDO &none     &kp LC(C) &none     &kp _PASTE ,
+   &none       &none     &none     &none     &none                ,
+// -------------------------------------------------------------- ,
+   &none &none &none                                              ,
+   &none &none &none                                              ,
+// -------------------------------------------------------------- ,
+         &none     &none &none &none    &none                     ,
+   &none &none     &none &none &none    &none                     ,
+   &none &none     &none &none &none    &none                     ,
+   &none &kp _HOME &none &none &kp _END &none                     ,
+   &none &none     &none &none &none    &none                     ,
+         &none     &none &none &none    &none                     ,
+// -------------------------------------------------------------- ,
+   &none &none &none                                              ,
+   &none &none &none                                              ,
+)>;
         };
     };
 };

@@ -19,3 +19,6 @@ board/%:
 
 .PHONY: build
 build: board/glove80_lh board/glove80_rh
+
+format:
+	poetry run python scripts/format_layout.py

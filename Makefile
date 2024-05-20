@@ -26,3 +26,6 @@ build:
 format:
 	poetry run ruff format scripts
 	poetry run python scripts/format_layout.py
+
+upload:
+	sudo python scripts/upload.py

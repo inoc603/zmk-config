@@ -1,4 +1,4 @@
-all: build_in_docker glv80.svg
+all: build_in_docker
 
 glv80.svg: config keymap_config.yaml
 	poetry run keymap -c keymap_config.yaml parse -z config/glove80.keymap > glv80.yaml

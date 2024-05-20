@@ -1,6 +1,6 @@
-glv80.svg: config
-	poetry run keymap parse -z config/glove80.keymap > glv80.yaml
-	poetry run keymap draw glv80.yaml > $@
+glv80.svg: config keymap_config.yaml
+	poetry run keymap -c keymap_config.yaml parse -z config/glove80.keymap > glv80.yaml
+	poetry run keymap -c keymap_config.yaml draw glv80.yaml > $@
 	rm glv80.yaml
 
 setup:

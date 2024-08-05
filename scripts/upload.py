@@ -14,6 +14,7 @@ def try_upload(vol: str, file: str):
     print(f"Uploaded {file} to {vol}")
     return True
 
+
 print("Watching glove80 volumes")
 
 while not left_uploaded or not right_uploaded:

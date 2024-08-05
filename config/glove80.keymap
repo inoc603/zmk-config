@@ -100,7 +100,7 @@
    &kp N  &kp M         &kp COMMA    &kp DOT     &kp FSLH       &kp PG_UP    ,
           &kp DOWN      &kp UP       &kp LBKT    &kp RBKT       &kp PG_DN    ,
 // ------------------------------------------------------------------------- ,
-   &kp RALT &kp DEL &shift_td                                                ,
+   &kp RALT &kp DEL &RSHFT                                                   ,
    &kp LGUI &kp RET &lt LAYER_SYMBOL SPACE                                   ,
 )>;
         };
